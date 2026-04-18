@@ -792,26 +792,29 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
       <div class="fi d1">
         <div class="form-wrap">
           <div class="form-title">שלח לי פרטים ואחזור אליך 👋</div>
-          <div class="form-row">
-            <div class="fg"><label>שם *</label><input type="text" placeholder="ישראל ישראלי"></div>
-            <div class="fg"><label>טלפון *</label><input type="tel" placeholder="054-745-9151"></div>
-          </div>
-          <div class="fg"><label>שם העסק</label><input type="text" placeholder="שם העסק שלך"></div>
-          <div class="fg">
-            <label>מה מעניין אותך?</label>
-            <select>
-              <option value="">בחר שירות</option>
-              <option>סרט מותג / תדמית</option>
-              <option>צילום עסקי</option>
-              <option>רילס ותוכן סושיאל</option>
-              <option>פרסומות</option>
-              <option>יום צילום מלא</option>
-              <option>עריכה</option>
-              <option>לא בטוח – נדבר</option>
-            </select>
-          </div>
-          <div class="fg"><label>ספר קצת</label><textarea placeholder="מה אתה מחפש? יש תאריך? תקציב? כל פרט עוזר..."></textarea></div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px" onclick="handleSubmit(this)">שלח ←</button>
+          <form id="contact-form" action="https://formspree.io/f/mnjlvqky" method="POST">
+            <input type="hidden" name="_language" value="he">
+            <div class="form-row">
+              <div class="fg"><label>שם *</label><input type="text" name="שם" placeholder="ישראל ישראלי" required></div>
+              <div class="fg"><label>טלפון *</label><input type="tel" name="טלפון" placeholder="054-745-9151" required></div>
+            </div>
+            <div class="fg"><label>שם העסק</label><input type="text" name="שם_עסק" placeholder="שם העסק שלך"></div>
+            <div class="fg">
+              <label>מה מעניין אותך?</label>
+              <select name="שירות_מבוקש">
+                <option value="">בחר שירות</option>
+                <option>סרט מותג / תדמית</option>
+                <option>צילום עסקי</option>
+                <option>רילס ותוכן סושיאל</option>
+                <option>פרסומות</option>
+                <option>יום צילום מלא</option>
+                <option>עריכה</option>
+                <option>לא בטוח – נדבר</option>
+              </select>
+            </div>
+            <div class="fg"><label>ספר קצת</label><textarea name="הודעה" placeholder="מה אתה מחפש? יש תאריך? תקציב? כל פרט עוזר..."></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:14px" id="submit-btn">שלח ←</button>
+          </form>
         </div>
       </div>
     </div>
@@ -867,6 +870,36 @@ function handleSubmit(btn) {
   btn.textContent = '✓ קיבלתי! נחזור אליך בקרוב 🙏';
   btn.style.background = '#2d6a2d';
   btn.disabled = true;
+}
+
+var form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.textContent = 'שולח...';
+    btn.disabled = true;
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/mnjlvqky', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        btn.textContent = '✓ קיבלתי! אחזור אליך בקרוב 🙏';
+        btn.style.background = '#2d6a2d';
+        form.reset();
+      } else {
+        btn.textContent = 'משהו השתבש, נסה שוב';
+        btn.style.background = '#a32d2d';
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = 'משהו השתבש, נסה שוב';
+      btn.style.background = '#a32d2d';
+      btn.disabled = false;
+    });
+  });
 }
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');
