@@ -51,7 +51,7 @@ body {
 .section { padding: 96px 0; }
 .tag {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
 }
 .tag::before { content: ''; width: 20px; height: 2px; background: var(--orange); display: block; }
@@ -531,12 +531,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
         <div class="tag">עבודות</div>
         <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:900">תראו בעצמכם</h2>
       </div>
-      <div class="port-filters">
-        <button class="port-filter active" onclick="filterPort(this)">הכל</button>
-        <button class="port-filter" onclick="filterPort(this)">וידאו</button>
-        <button class="port-filter" onclick="filterPort(this)">צילום</button>
-        <button class="port-filter" onclick="filterPort(this)">סושיאל</button>
-      </div>
+
     </div>
     <div class="port-grid fi">
       <div class="pc">
@@ -603,9 +598,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
         <div class="pc-play">▶</div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:40px" class="fi">
-      <a href="portfolio.html" class="btn btn-ghost">לראות עוד עבודות →</a>
-    </div>
+
   </div>
 </section>
 
@@ -714,7 +707,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
   <div class="container">
     <div class="fi" style="max-width:540px;margin-bottom:48px">
       <div class="tag">שאלות נפוצות</div>
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900">יש לך שאלות.<br>יש לי תשובות.</h2>
+      <h2 style="font-family:var(--font-body);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900">יש לך שאלות?<br>יש לי תשובות (:</h2>
     </div>
     <div class="faq-grid fi">
       <div class="faq-item">
