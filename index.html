@@ -131,11 +131,11 @@ nav:not(.scrolled) .burger span { background: #fff; }
 .pain-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: #fff; }
 .pain-title .hi { color: var(--orange); }
 .pain-sub { font-size: 1.05rem; color: rgba(255,255,255,0.5); margin-bottom: 48px; line-height: 1.7; }
-.pain-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
-.pain-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 28px 24px; text-align: right; }
-.pain-emoji { font-size: 28px; margin-bottom: 12px; }
-.pain-card-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.pain-card-text { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.pain-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 40px; }
+.pain-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 16px 16px; text-align: right; }
+.pain-emoji { font-size: 20px; margin-bottom: 8px; }
+.pain-card-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.pain-card-text { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
 /* SOLUTION */
 #solution { background: var(--bg); }
@@ -204,6 +204,20 @@ nav:not(.scrolled) .burger span { background: #fff; }
 .step:last-child { border-right: none; }
 .step-num-wrap { margin-bottom: 20px; }
 .step-num { width: 40px; height: 40px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #fff; }
+
+.process-infographic { max-width: 700px; margin: 0 auto; }
+.process-track { display: flex; flex-direction: column; gap: 0; }
+.process-step-row { display: flex; align-items: center; justify-content: flex-end; position: relative; }
+.process-step-row.reverse { justify-content: flex-start; }
+.process-node { display: flex; align-items: flex-start; gap: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px 28px; max-width: 420px; box-shadow: var(--shadow-sm); }
+.process-node.right { border-right: 3px solid var(--orange); }
+.process-node.left { border-left: 3px solid var(--orange); flex-direction: row-reverse; text-align: right; }
+.process-circle { width: 44px; height: 44px; background: var(--bg2); border: 2px solid var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: var(--orange); flex-shrink: 0; }
+.process-step-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.process-step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+.process-connector-right { width: 3px; height: 48px; background: linear-gradient(to bottom, var(--orange), rgba(224,112,64,0.3)); margin-right: 52px; align-self: flex-end; }
+.process-connector-left { width: 3px; height: 48px; background: linear-gradient(to bottom, var(--orange), rgba(224,112,64,0.3)); margin-left: 52px; }
+.process-arrow-right, .process-arrow-left { display: none; }
 .step-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
 
@@ -281,7 +295,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
   .step:nth-child(3) { border-top: 1px solid var(--border); }
   .testi-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .pain-cards { grid-template-columns: 1fr 1fr; }
+  .pain-cards { grid-template-columns: repeat(3,1fr); gap: 8px; }
   .faq-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
@@ -299,7 +313,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
   body { padding-bottom: 76px; }
   .hero-title { font-size: 2.6rem; }
   .form-row { grid-template-columns: 1fr; }
-  .pain-cards { grid-template-columns: 1fr; }
+  .pain-cards { grid-template-columns: repeat(3,1fr); gap: 6px; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 </style>
@@ -415,7 +429,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
       <div class="fi d1">
         <div class="tag">הפתרון</div>
         <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;margin-bottom:20px;line-height:1.15">תוכן שעושה את העבודה.<br>בלי כאב ראש.</h2>
-        <p class="solution-intro">אני לא סתם <strong>צלם</strong>. אני מגיע, מבין מה העסק שלך צריך להגיד, ומייצר תוכן שגורם ללקוחות שלך להרגיש שאתה <strong>בדיוק מה שהם חיפשו</strong>.</p>
+        <p class="solution-intro">אני לא עוד צלם.<br>אני מבין מה העסק שלך צריך להגיד ומייצר לך תוכן שגורם ללקוחות שלך להרגיש שאתה <strong>בדיוק מה שהם חיפשו</strong>.</p>
         <div class="checkmarks">
           <div class="check-item">
             <div class="check-dot"></div>
@@ -445,52 +459,35 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
   <div class="container">
     <div class="fi" style="max-width:560px;margin-bottom:48px">
       <div class="tag">מה אני עושה</div>
-      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:12px">שירותים לעסקים שרוצים להיראות ברמה</h2>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900;margin-bottom:12px">השירותים שאני מציע</h2>
       <p style="color:var(--text-muted)">בחר מה שרלוונטי לך, או בוא נדבר ונראה מה הכי מתאים.</p>
     </div>
     <div class="services-grid">
       <div class="srv-card fi">
-        <div class="srv-num">01</div>
         <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/></svg></div>
         <div class="srv-name">סרט מותג ותדמית</div>
-        <p class="srv-desc">הסרט שיסביר מי אתה תוך 60 שניות, יגרום ללקוחות להבין למה הם צריכים אותך, ויעבוד בכל מקום.</p>
-        <div class="srv-fit">← מתאים ל: עסקים שרוצים להיות מוכרים</div>
+        <p class="srv-desc">הסרט שיסביר מי אתה תוך 60 שניות, יגרום ללקוחות להבין למה הם צריכים אותך, ויעבוד בכל פלטפורמה.</p>
+        <div class="srv-fit">← מתאים לעסקים שרוצים לבלוט</div>
       </div>
       <div class="srv-card fi d1">
-        <div class="srv-num">02</div>
         <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-        <div class="srv-name">צילום עסקי ומקצועי</div>
-        <p class="srv-desc">תמונות לאתר, לינקדאין וגוגל עסקים. הרושם הראשון שלקוח פוטנציאלי מקבל ממך מתחיל כאן.</p>
-        <div class="srv-fit">← מתאים ל: פרילנסרים, חברות, בעלי מקצוע</div>
+        <div class="srv-name">צילום סטילס עסקי ומקצועי</div>
+        <p class="srv-desc">תמונות לאתר, לינקדאין וגוגל עסקים.<br>הרושם הראשון שלקוח פוטנציאלי מקבל ממך מתחיל כאן.</p>
+        <div class="srv-fit">← מתאים לעסקים שרוצים לבלוט</div>
       </div>
       <div class="srv-card fi d2">
-        <div class="srv-num">03</div>
         <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="22" x2="15" y2="22"/></svg></div>
         <div class="srv-name">רילס ותוכן סושיאל</div>
         <p class="srv-desc">רילס שאנשים שולחים לחברים. תוכן שגורם לפרופיל שלך להיראות כמו top בתחום. בנק תוכן לחודשים.</p>
-        <div class="srv-fit">← מתאים ל: כל עסק עם נוכחות דיגיטלית</div>
+        <div class="srv-fit">← מתאים לעסקים שרוצים לבלוט</div>
       </div>
       <div class="srv-card fi">
-        <div class="srv-num">04</div>
         <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="srv-name">פרסומות לדיגיטל</div>
         <p class="srv-desc">קריאייטיב לפייסבוק, אינסטגרם וגוגל שבנוי למשוך תשומת לב תוך 3 שניות. כי זה כל מה שיש לך.</p>
-        <div class="srv-fit">← מתאים ל: עסקים שמשקיעים בפרסום</div>
+        <div class="srv-fit">← מתאים לעסקים שרוצים לבלוט</div>
       </div>
-      <div class="srv-card fi d1">
-        <div class="srv-num">05</div>
-        <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="srv-name">יום צילום מלא</div>
-        <p class="srv-desc">יום אחד = 3 חודשי תוכן. מגיעים, מצלמים הכל, עורכים, ואתה מקבל בנק ענק מוכן לפרסום.</p>
-        <div class="srv-fit">← מתאים ל: עסקים שרוצים יעילות</div>
-      </div>
-      <div class="srv-card fi d2">
-        <div class="srv-num">06</div>
-        <div class="srv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div>
-        <div class="srv-name">עריכה על חומרים קיימים</div>
-        <p class="srv-desc">יש לך חומרים אבל הם לא מייצגים אותך? מביאים לי, אני עורך ומחזיר משהו שאתה גאה בו.</p>
-        <div class="srv-fit">← מתאים ל: מי שיש לו חומגלם</div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -555,7 +552,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
       </div>
     </div>
     <div style="text-align:center;margin-top:40px" class="fi">
-      <a href="#contact" class="btn btn-ghost">לראות עוד עבודות →</a>
+      <a href="portfolio.html" class="btn btn-ghost">לראות עוד עבודות →</a>
     </div>
   </div>
 </section>
@@ -568,26 +565,50 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
       <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:12px">פשוט. נעים. מהיר.</h2>
       <p style="color:var(--text-muted)">ארבעה שלבים מהרגע שדברנו ועד שאתה מפרסם.</p>
     </div>
-    <div class="steps fi">
-      <div class="step">
-        <div class="step-num-wrap"><div class="step-num">1</div></div>
-        <div class="step-title">שיחת היכרות חינם</div>
-        <p class="step-desc">מדברים קצת בטלפון, מבינים מה אתם צריכים ומה המטרה. בלי לחץ, בלי לסגור.</p>
-      </div>
-      <div class="step">
-        <div class="step-num-wrap"><div class="step-num">2</div></div>
-        <div class="step-title">תכנון ובריף</div>
-        <p class="step-desc">אני בונה תכנית מדויקת. מה נצלם, איפה, בסגנון מה. אתה מאשר ומקבעים תאריך.</p>
-      </div>
-      <div class="step">
-        <div class="step-num-wrap"><div class="step-num">3</div></div>
-        <div class="step-title">יום הצילום</div>
-        <p class="step-desc">מגיעים, מצלמים, נהנים – ויוצאים עם חומרים איכותיים.</p>
-      </div>
-      <div class="step">
-        <div class="step-num-wrap"><div class="step-num">4</div></div>
-        <div class="step-title">עריכה ומסירה</div>
-        <p class="step-desc">לאחר עבודת עריכה אתם מקבלים הכל מוכן באיכות גבוהה, מוכן לפרסום.</p>
+    <div class="fi process-infographic">
+      <div class="process-track">
+        <div class="process-step-row">
+          <div class="process-node right">
+            <div class="process-circle">1</div>
+            <div class="process-content">
+              <div class="process-step-title">שיחת היכרות חינם</div>
+              <p class="process-step-desc">מדברים קצת בטלפון, מבינים מה אתם צריכים ומה המטרה. בלי לחץ, בלי לסגור.</p>
+            </div>
+          </div>
+          <div class="process-arrow-right">↓</div>
+        </div>
+        <div class="process-connector-right"></div>
+        <div class="process-step-row reverse">
+          <div class="process-node left">
+            <div class="process-circle">2</div>
+            <div class="process-content">
+              <div class="process-step-title">תכנון ובריף</div>
+              <p class="process-step-desc">אני בונה תכנית מדויקת. מה נצלם, איפה, בסגנון מה. אתה מאשר ומקבעים תאריך.</p>
+            </div>
+          </div>
+          <div class="process-arrow-left">↓</div>
+        </div>
+        <div class="process-connector-left"></div>
+        <div class="process-step-row">
+          <div class="process-node right">
+            <div class="process-circle">3</div>
+            <div class="process-content">
+              <div class="process-step-title">יום הצילום</div>
+              <p class="process-step-desc">מגיעים, מצלמים, נהנים – ויוצאים עם חומרים איכותיים.</p>
+            </div>
+          </div>
+          <div class="process-arrow-right">↓</div>
+        </div>
+        <div class="process-connector-right"></div>
+        <div class="process-step-row reverse">
+          <div class="process-node left finish">
+            <div class="process-circle" style="background:var(--orange);box-shadow:0 0 0 6px rgba(224,112,64,0.15)">4</div>
+            <div class="process-content">
+              <div class="process-step-title">עריכה ומסירה 🎬</div>
+              <p class="process-step-desc">לאחר עבודת עריכה אתם מקבלים הכל מוכן באיכות גבוהה, מוכן לפרסום.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -617,7 +638,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
         <p class="testi-text">"נחמן הצלם שלי כבר תקופה ארוכה – וזה כבר מעיד על הכל. מגיע מוכן, זורם על רעיונות, מצליח להוציא ממני את המקסימום בכל סשן. כל סרטון ברמה גבוהה, עם עריכה מדויקת ותשומת לב לפרטים. מקצוען ואחלה בן אדם."</p>
         <div class="testi-author">
           <div class="testi-av" style="background:none;padding:0;overflow:hidden;width:44px;height:44px;flex-shrink:0">
-            <img src="eran.jpg" alt="ערן ליאני" style="width:100%;height:100%;object-fit:cover;object-position:center 15%">
+            <img src="eran.jpg" alt="ערן ליאני" style="width:100%;height:100%;object-fit:cover;object-position:center 5%">
           </div>
           <div><div class="testi-name">ערן ליאני</div><div class="testi-role">יועץ פיננסי, UNI</div></div>
         </div>
@@ -678,7 +699,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
   <div class="container">
     <div class="cta-content fi">
       <div class="tag" style="color:rgba(255,255,255,0.35);justify-content:center"><span style="background:rgba(255,255,255,0.15)"></span>מוכן?</div>
-      <h2 class="cta-title">הפרויקט הבא שלך<br><span class="accent">מתחיל בשיחה אחת.</span></h2>
+      <h2 class="cta-title">העתיד של העסק שלך<br><span class="accent">מתחיל בשיחה אחת.</span></h2>
       <p class="cta-sub">שיחת היכרות בחינם, ללא התחייבות. מספרים לי על העסק ומבינים ביחד מה הצעד הנכון.</p>
       <div class="cta-btns">
         <a href="https://wa.me/9720547459151" target="_blank" class="btn btn-wa" style="font-size:15px;padding:15px 36px">
@@ -704,9 +725,9 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
             <div class="ch-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E07040"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
             <div><div class="ch-label">וואטסאפ</div><div class="ch-val">054-745-9151</div></div>
           </a>
-          <a href="https://instagram.com/your.handle" target="_blank" class="channel">
+          <a href="https://www.instagram.com/nachman_/" target="_blank" class="channel">
             <div class="ch-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E07040" stroke="none"/></svg></div>
-            <div><div class="ch-label">אינסטגרם</div><div class="ch-val">@your.handle</div></div>
+            <div><div class="ch-label">אינסטגרם</div><div class="ch-val">@nachman_</div></div>
           </a>
           <a href="mailto:bybengg@gmail.com" class="channel">
             <div class="ch-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07040" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -754,7 +775,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 40px 0 
         <li><a href="#contact">צור קשר</a></li>
       </ul>
       <div style="display:flex;gap:16px">
-        <a href="https://instagram.com" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:13px;transition:color 0.2s" onmouseover="this.style.color='#E07040'" onmouseout="this.style.color=''">Instagram</a>
+        <a href="https://www.instagram.com/nachman_/" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:13px;transition:color 0.2s" onmouseover="this.style.color='#E07040'" onmouseout="this.style.color=''">Instagram</a>
         <a href="https://wa.me/9720547459151" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:13px;transition:color 0.2s" onmouseover="this.style.color='#E07040'" onmouseout="this.style.color=''">WhatsApp</a>
       </div>
     </div>
